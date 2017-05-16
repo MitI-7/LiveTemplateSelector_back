@@ -1,0 +1,32 @@
+<idea-plugin>
+  <id>com.github.MitI_7.LiveTemplateSelector</id>
+  <name>LiveTemplateSelector</name>
+  <version>1.0</version>
+  <vendor email="MitI_7@outlook.com" url="https://github.com/MitI-7/LiveTemplateSelector">MitI_7</vendor>
+
+  <description><![CDATA[
+      Select LiveTemplate from directory tree
+    ]]></description>
+
+  <change-notes><![CDATA[
+      0.1.0 - Initial Version
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="131"/>
+
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceInterface="com.github.MitI_7.Settings" serviceImplementation="com.github.MitI_7.Settings"/>
+    <applicationConfigurable instance="com.github.MitI_7.LiveTemplateSelector" />
+  </extensions>
+
+  <actions>
+    <action id="com.github.MitI_7.SelectorAction" class="com.github.MitI_7.SelectorAction" text="Select Live Template Group">
+      <add-to-group group-id="CodeMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
